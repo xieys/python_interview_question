@@ -352,8 +352,8 @@
     def str2dict(str1):
         dict1 = {}
         for iterms in str1.split('|'):
-            key,value = iterms.split(':'):
-                dict1[key] = value
+            key,value = iterms.split(':')
+            dict1[key] = value
         return dict1
 ```
 ## 3.5 请按alist中元素的age由大到小排序
