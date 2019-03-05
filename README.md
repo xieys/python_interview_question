@@ -629,7 +629,7 @@ if __name__ == "__main__":
 生成器（Generator）是创建迭代器的简单而强大的工具。它们写起来就像是正规的函数，只是在需要返回数据的时候使用yield语句。每次next()被调用时，生成器会返回它脱离的位置（它记忆语句最后一次执行的位置和所有的数据值）
 区别： 生成器能做到迭代器能做的所有事，而且因为自动创建iter()和next()方法，生成器显得特别简洁，而且生成器也是高效的，使用生成器表达式取代列表解析可以同时节省内存。除了创建和保存程序状态的自动方法，当发生器终结时，还会自动抛出StopIteration异常。
 ## 4.9 X是什么类型?
-    X= (fo ri in ramg(10))
+    X= (for i in ramg(10))
     X是 generator类型
 ## 4.10 请用一行代码 实现将1-N 的整数列表以3为单位分组
 ```
@@ -1057,8 +1057,7 @@ qq登录，在我们的项目中分为了三个接口，
 1.GET是从服务器上获取数据，POST是向服务器传送数据
 2.在客户端，GET方式在通过URL提交数据，数据在URL中可以看到，POST方式，数据放置在HTML——HEADER内提交
 3.对于GET方式，服务器端用Request.QueryString获取变量的值，对于POST方式，服务器端用Request.Form获取提交的数据
-4.GET方式提交的数据最多只能有1024字节，而POST则没有限制
-安全性问题，正如在(2)中提到，使用GET的时候，参数会显示在地址栏上，而POST不会。所以，如果这些数据是中文数据而且是非敏感数据，那么使用GET，如果用户输入的数据不是中文字符而且包含敏感数据，那么还是使用POST为好
+
 
 ## 2.11 项目中日志的作用
 一、日志相关概念
@@ -1136,4 +1135,4 @@ Web browsable API对开发者有极大的好处
 支持ORM和非ORM数据资源的序列化
 全程自定义开发--如果不想使用更加强大的功能，可仅仅使用常规的function-based views额外的文档和强大的社区支持
 ## 2.19 对cookies与session的了解？他们能单独用吗？
-Session采用的是在服务器端保持状态的方案，而Cookie采用的是在客户端保持状态的方案。但是禁用Cooki就不能得到Session。因为Session是用Session ID来确定当前对话所对应的服务器Session，而Session ID是通过Cookie来传递的，禁用Cookie相当于SessionID,也就得不到Session。
+Session采用的是在服务器端保持状态的方案，而Cookie采用的是在客户端保持状态的方案。但是禁用Cookie就不能得到Session。因为Session是用Session ID来确定当前对话所对应的服务器Session，而Session ID是通过Cookie来传递的，禁用Cookie相当于SessionID,也就得不到Session。
