@@ -635,13 +635,18 @@ if __name__ == "__main__":
 
 ```
     import time
+    from functools import wraps
+
     def timeit(func):
-        def wrapper():
+        @wraps(func)
+        def wrapper(*args, **kwargs):
             start = time.clock()
-            func()
+            ret = func(*args, **kwargs)
             end = time.clock()
             print('used:',end-start)
-            return wrapper
+            return ret
+        
+        return wrapper
     @timeit
     def foo():
         print('in foo()'foo())
@@ -657,6 +662,8 @@ if __name__ == "__main__":
 迭代器是遵循迭代协议的对象。用户可以使用 iter() 以从任何序列得到迭代器（如 list, tuple, dictionary, set 等）。另一个方法则是创建一个另一种形式的迭代器 —— generator 。要获取下一个元素，则使用成员函数 next()（Python 2）或函数 next() function （Python 3） 。当没有元素时，则引发 StopIteration 此例外。若要实现自己的迭代器，则只要实现 next()（Python 2）或 `__next__`()（ Python 3）
 
 生成器（Generator），只是在需要返回数据的时候使用yield语句。每次next()被调用时，生成器会返回它脱离的位置（它记忆语句最后一次执行的位置和所有的数据值）
+
+
 区别： 生成器能做到迭代器能做的所有事，而且因为自动创建iter()和next()方法，生成器显得特别简洁，而且生成器也是高效的，使用生成器表达式取代列表解析可以同时节省内存。除了创建和保存程序状态的自动方法，当发生器终结时，还会自动抛出StopIteration异常。
 官方介绍：https://docs.python.org/3/tutorial/classes.html#iterators
 ## 4.9 X是什么类型?
