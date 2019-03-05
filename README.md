@@ -321,12 +321,12 @@ https://stackoverflow.com/questions/30294146/python-fastest-way-to-process-large
     以及其包含文件夹中文件的路径
     """
     import os
-    for sChild in os.listdir(sPath):
-        sChildPath = os.path.join(sPath,sChild)
-        if os.path.isdir(sChildPath):
-            print_directory_contents(sChildPath)
+    for s_child in os.listdir(s_path):
+        s_child_path = os.path.join(s_path, s_child)
+        if os.path.isdir(s_child_path):
+            print_directory_contents(s_child_path)
         else:
-            print(sChildPath)
+            print(s_child_path)
 ```
 # 模块与包
 ## 2.1 输入日期， 判断这一天是这一年的第几天？
@@ -516,7 +516,7 @@ New 是真正创建实例对象的方法，所以重写基类的new 方法，以
 ```
     import os
 
-    def getFiles(dir,suffix):
+    def get_files(dir,suffix):
         res = []
         for root,dirs,files in os.walk(dir):
             for filename in files:
@@ -526,7 +526,7 @@ New 是真正创建实例对象的方法，所以重写基类的new 方法，以
 
         print(res)
     
-    getFiles("./",'.pyc')
+    get_files("./",'.pyc')
 ```
 第二种方法：
 ```
@@ -1165,4 +1165,8 @@ Web browsable API对开发者有极大的好处
 支持ORM和非ORM数据资源的序列化
 全程自定义开发--如果不想使用更加强大的功能，可仅仅使用常规的function-based views额外的文档和强大的社区支持
 ## 2.19 对cookies与session的了解？他们能单独用吗？
+<<<<<<< HEAD
 Session采用的是在服务器端保持状态的方案，而Cookie采用的是在客户端保持状态的方案。但是禁用Cookie就不能得到Session。因为Session是用Session ID来确定当前对话所对应的服务器Session，而Session ID是通过Cookie来传递的，禁用Cookie相当于SessionID,也就得不到Session。
+=======
+Session采用的是在服务器端保持状态的方案，而Cookie采用的是在客户端保持状态的方案。但是禁用Cooki就不能得到Session。因为Session是用Session ID来确定当前对话所对应的服务器Session，而Session ID是通过Cookie来传递的，禁用Cookie相当于SessionID,也就得不到Session。
+>>>>>>> d0f7d5c7c12334741834d9a5de9305ae888531f1
