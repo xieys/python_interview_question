@@ -654,7 +654,10 @@ if __name__ == "__main__":
 详细参考：https://manjusaka.itscoder.com/2018/02/23/something-about-decorator/
 
 ##  4.8 生成器，迭代器的区别？
-迭代器是一个更抽象的概念，任何对象，如果它的类有next方法和iter方法返回自己本身，对于string,list,dict,tuple等这类容器对象，使用for循环遍历是很方便的，在后台for语句对容器对象调用iter()函数，iter()是python的内置函数，iter()会返回一个定义了next()（python2）__next__(python3)方法的迭代器对象，它在容器中逐个访问容器内元素，next()也是python的内置函数，在没有后续元素时，next()会抛出一个StopIteration异常。
+迭代器是一个更抽象的概念，任何对象，如果它的类有next方法和iter方法返回自己本身，对于string,list,dict,tuple等这类容器对象，使用for循环遍历是很方便的，在后台for语句对容器对象调用iter()函数，iter()是python的内置函数，iter()会返回一个定义了next()方法的迭代器对象，它在容器中逐个访问容器内元素，next()也是python的内置函数，在没有后续元素时，next()会抛出一个StopIteration异常。
+Iterator :An iterator is an object with a next (Python 2) or `__next__ `(Python 3) method.
+凡是可以for循环的，都是Iterable
+凡是可以next()的，都是Iterator
 生成器（Generator）是创建迭代器的简单而强大的工具。它们写起来就像是正规的函数，只是在需要返回数据的时候使用yield语句。每次next()被调用时，生成器会返回它脱离的位置（它记忆语句最后一次执行的位置和所有的数据值）
 区别： 生成器能做到迭代器能做的所有事，而且因为自动创建iter()和next()方法，生成器显得特别简洁，而且生成器也是高效的，使用生成器表达式取代列表解析可以同时节省内存。除了创建和保存程序状态的自动方法，当发生器终结时，还会自动抛出StopIteration异常。
 官方介绍：https://docs.python.org/3/tutorial/classes.html#iterators
@@ -1165,8 +1168,4 @@ Web browsable API对开发者有极大的好处
 支持ORM和非ORM数据资源的序列化
 全程自定义开发--如果不想使用更加强大的功能，可仅仅使用常规的function-based views额外的文档和强大的社区支持
 ## 2.19 对cookies与session的了解？他们能单独用吗？
-<<<<<<< HEAD
 Session采用的是在服务器端保持状态的方案，而Cookie采用的是在客户端保持状态的方案。但是禁用Cookie就不能得到Session。因为Session是用Session ID来确定当前对话所对应的服务器Session，而Session ID是通过Cookie来传递的，禁用Cookie相当于SessionID,也就得不到Session。
-=======
-Session采用的是在服务器端保持状态的方案，而Cookie采用的是在客户端保持状态的方案。但是禁用Cooki就不能得到Session。因为Session是用Session ID来确定当前对话所对应的服务器Session，而Session ID是通过Cookie来传递的，禁用Cookie相当于SessionID,也就得不到Session。
->>>>>>> d0f7d5c7c12334741834d9a5de9305ae888531f1
