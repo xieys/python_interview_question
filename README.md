@@ -305,12 +305,12 @@
     以及其包含文件夹中文件的路径
     """
     import os
-    for sChild in os.listdir(sPath):
-        sChildPath = os.path.join(sPath,sChild)
-        if os.path.isdir(sChildPath):
-            print_directory_contents(sChildPath)
+    for s_child in os.listdir(s_path):
+        s_child_path = os.path.join(s_path, s_child)
+        if os.path.isdir(s_child_path):
+            print_directory_contents(s_child_path)
         else:
-            print(sChildPath)
+            print(s_child_path)
 ```
 # 模块与包
 ## 2.1 输入日期， 判断这一天是这一年的第几天？
@@ -500,7 +500,7 @@ New 是真正创建实例对象的方法，所以重写基类的new 方法，以
 ```
     import os
 
-    def getFiles(dir,suffix):
+    def get_files(dir,suffix):
         res = []
         for root,dirs,files in os.walk(dir):
             for filename in files:
@@ -510,7 +510,7 @@ New 是真正创建实例对象的方法，所以重写基类的new 方法，以
 
         print(res)
     
-    getFiles("./",'.pyc')
+    get_files("./",'.pyc')
 ```
 第二种方法：
 ```
