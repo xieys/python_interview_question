@@ -544,6 +544,43 @@ New 是真正创建实例对象的方法，所以重写基类的new 方法，以
 ```
 
 # Python高级
+## 3 函数
+## 3.6 手写一个判断时间的装饰器
+```
+import datetime
+
+
+class TimeException(Exception):
+    def __init__(self, exception_info):
+        super().__init__()
+        self.info = exception_info
+
+    def __str__(self):
+        return self.info
+
+
+def timecheck(func):
+    def wrapper(*args, **kwargs):
+        if datetime.datetime.now().year == 2019:
+            func(*args, **kwargs)
+        else:
+            raise TimeException("函数已过时")
+
+    return wrapper
+
+
+@timecheck
+def test(name):
+    print("Hello {}, 2019 Happy".format(name))
+
+
+if __name__ == "__main__":
+    test("backbp")
+```
+## 3.7 使用Python内置的filter()方法来过滤？
+```
+    [x for x in filter(lambda x: x % 2 == 0, range(10))] 
+```
 ## 4设计模式
 ## 4.1 对设计模式的理解，简述你了解的设计模式？
 设计模式是经过总结，优化的，对我们经常会碰到的一些编程问题的可重用解决方案。一个设计模式并不像一个类或一个库那样能够直接作用于我们的代码，反之，设计模式更为高级，它是一种必须在特定情形下实现的一种方法模板。
@@ -600,6 +637,10 @@ New 是真正创建实例对象的方法，所以重写基类的new 方法，以
 ```
 ## 4.11 Python中yield的用法》
 yield就是保存当前程序执行状态。你用for循环的时候，每次取一个元素的时候就会计算一次。用yield的函数叫generator,和iterator一样，它的好处是不用一次计算所有元素，而是用一次算一次，可以节省很多空间，generator每次计算需要上一次计算结果，所以用yield,否则一return，上次计算结果就没了
+## 4.20 用一行代码生成[1,4,9,16,25,36,49,64,81,100]
+```
+    print([x*x for x in range(1, 11)])
+```
 ## 7系统编程
 ## 7.1 进程总结
 进程：程序运行在操作系统上的一个实例，就称之为进程。进程需要相应的系统资源：内存、时间片、pid。
