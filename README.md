@@ -278,11 +278,8 @@
 ## 1.1 有一个jsonline格式的文件file.txt 大小约为10K
 ```
     def get_lines():
-        l = []
-        with open('file.txt','rb) as f:
-            for eachline in f:
-                l.append(eachline)
-            return l
+        with open('file.txt','rb') as f:
+            return f.readlines()
 
     if __name__ == '__main__':
         for e in get_lines():
@@ -291,13 +288,30 @@
 现在要处理一个大小为10G的文件，但是内存只有4G，如果在只修改get_lines 函数而其他代码保持不变的情况下，应该如何实现？需要考虑的问题都有那些？
 ```
     def get_lines():
-        l = []
         with open('file.txt','rb') as f:
-            data = f.readlines(60000)
-        l.append(data)
-        yield l
+            for i in f:
+                yield i
+```
+Pandaaaa906提供的方法
+```
+from mmap import mmap
+
+
+def get_lines(fp):
+    with open(fp,"r+") as f:
+        m = mmap(f.fileno(), 0)
+        tmp = 0
+        for i, char in enumerate(m):
+            if char==b"\n":
+                yield m[tmp:i+1].decode()
+                tmp = i+1
+
+if __name__=="__main__":
+    for i in get_lines("fp_some_huge_file"):
+        print(i)
 ```
 要考虑的问题有：内存只有4G无法一次性读入10G文件，需要分批读入分批读入数据要记录每次读入数据的位置。分批每次读取数据的大小，太小会在读取操作花费过多时间。
+https://stackoverflow.com/questions/30294146/python-fastest-way-to-process-large-file
 ## 1.2 补充缺失的代码
 ```
     def print_directory_contents(sPath):
@@ -537,6 +551,19 @@ New 是真正创建实例对象的方法，所以重写基类的new 方法，以
         path = input('输入目录')
         scan_path(path)
 ```
+第三种方法
+```
+from glob import iglob
+
+
+def func(fp, postfix):
+    for i in iglob(f"{fp}/**/*{postfix}", recursive=True):
+        print(i)
+
+if __name__ == "__main__":
+    postfix = ".pyc"
+    func("K:\Python_script", postfix)
+```
 ## 4.6 一行代码实现1-100之和
 ```
     count = sum(range(0,101))
@@ -623,13 +650,16 @@ if __name__ == "__main__":
 在函数内部再定义一个函数，并且这个函数用到了外边函数的变量，那么将这个函数以及用到的一些变量称之为闭包。
 
 ## 4.7 函数装饰器有什么作用？
-装饰器本质上是一个python函数，它可以在让其他函数在不需要做任何代码的变动的前提下增加额外的功能。装饰器的返回值也是一个函数的对象，它经常用于有切面需求的场景。比如：插入日志，性能测试，事务处理，缓存。权限的校验等场景，有了装饰器就可以抽离出大量的与函数功能本身无关的雷同代码并发并继续使用。
+装饰器本质上是一个python函数或类，它可以在让其他函数在不需要做任何代码的变动的前提下增加额外的功能。装饰器的返回值也是一个函数的对象，它经常用于有切面需求的场景。比如：插入日志，性能测试，事务处理，缓存。权限的校验等场景，有了装饰器就可以抽离出大量的与函数功能本身无关的雷同代码并发并继续使用。
+详细参考：https://manjusaka.itscoder.com/2018/02/23/something-about-decorator/
+
 ##  4.8 生成器，迭代器的区别？
-迭代器是一个更抽象的概念，任何对象，如果它的类有next方法和iter方法返回自己本身，对于string,list,dict,tuple等这类容器对象，使用for循环遍历是很方便的，在后台for语句对容器对象调用iter()函数，iter()是python的内置函数，iter()会返回一个定义了next()方法的迭代器对象，它在容器中逐个访问容器内元素，next()也是python的内置函数，在没有后续元素时，next()会抛出一个StopIteration异常。
+迭代器是一个更抽象的概念，任何对象，如果它的类有next方法和iter方法返回自己本身，对于string,list,dict,tuple等这类容器对象，使用for循环遍历是很方便的，在后台for语句对容器对象调用iter()函数，iter()是python的内置函数，iter()会返回一个定义了next()（python2）__next__(python3)方法的迭代器对象，它在容器中逐个访问容器内元素，next()也是python的内置函数，在没有后续元素时，next()会抛出一个StopIteration异常。
 生成器（Generator）是创建迭代器的简单而强大的工具。它们写起来就像是正规的函数，只是在需要返回数据的时候使用yield语句。每次next()被调用时，生成器会返回它脱离的位置（它记忆语句最后一次执行的位置和所有的数据值）
 区别： 生成器能做到迭代器能做的所有事，而且因为自动创建iter()和next()方法，生成器显得特别简洁，而且生成器也是高效的，使用生成器表达式取代列表解析可以同时节省内存。除了创建和保存程序状态的自动方法，当发生器终结时，还会自动抛出StopIteration异常。
+官方介绍：https://docs.python.org/3/tutorial/classes.html#iterators
 ## 4.9 X是什么类型?
-    X= (for i in ramg(10))
+    X= (i for i in range(10))
     X是 generator类型
 ## 4.10 请用一行代码 实现将1-N 的整数列表以3为单位分组
 ```
