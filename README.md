@@ -276,7 +276,7 @@
 
 # Python基础
 ## 1.1 有一个jsonline格式的文件file.txt 大小约为10K
-```
+```python
     def get_lines():
         with open('file.txt','rb') as f:
             return f.readlines()
@@ -286,14 +286,14 @@
             process(e) #处理每一行数据
 ```
 现在要处理一个大小为10G的文件，但是内存只有4G，如果在只修改get_lines 函数而其他代码保持不变的情况下，应该如何实现？需要考虑的问题都有那些？
-```
+```python
     def get_lines():
         with open('file.txt','rb') as f:
             for i in f:
                 yield i
 ```
 Pandaaaa906提供的方法
-```
+```python
 from mmap import mmap
 
 
@@ -313,7 +313,7 @@ if __name__=="__main__":
 要考虑的问题有：内存只有4G无法一次性读入10G文件，需要分批读入分批读入数据要记录每次读入数据的位置。分批每次读取数据的大小，太小会在读取操作花费过多时间。
 https://stackoverflow.com/questions/30294146/python-fastest-way-to-process-large-file
 ## 1.2 补充缺失的代码
-```
+```python
     def print_directory_contents(sPath):
     """
     这个函数接收文件夹的名称作为输入参数
@@ -330,7 +330,7 @@ https://stackoverflow.com/questions/30294146/python-fastest-way-to-process-large
 ```
 # 模块与包
 ## 2.1 输入日期， 判断这一天是这一年的第几天？
-```
+```python
     import datetime
     def dayofyear():
         year = input("请输入年份: ")
@@ -341,7 +341,7 @@ https://stackoverflow.com/questions/30294146/python-fastest-way-to-process-large
         return (date1-date2).days+1
 ```
 ## 2.2 打乱一个排好序的list对象alist？
-```
+```python
     import random
     alist = [1,2,3,4,5]
     random.shuffle(alist)
@@ -349,19 +349,19 @@ https://stackoverflow.com/questions/30294146/python-fastest-way-to-process-large
 ```
 # 数据类型
 ## 3.1 现有字典 d= {'a':24,'g':52,'i':12,'k':33}请按value值进行排序?
-```
+```python
     sorted(d.items(),key=lambda x:x[1])
 ```
 ## 3.2 字典推导式
-```
+```python
  d = {key:value for (key,value) in iterable}
 ```
 ## 3.3 请反转字符串 "aStr"?
-```
+```python
     print("aStr"[::-1])
 ```
 ## 3.4 将字符串 "k:1 |k1:2|k2:3|k3:4"，处理成字典 {k:1,k1:2,...}
-```
+```python
     str1 = "k:1|k1:2|k2:3|k3:4"
     def str2dict(str1):
         dict1 = {}
@@ -371,23 +371,23 @@ https://stackoverflow.com/questions/30294146/python-fastest-way-to-process-large
         return dict1
 ```
 ## 3.5 请按alist中元素的age由大到小排序
-```
+```python
     alist = [{'name':'a','age':20},{'name':'b','age':30},{'name':'c','age':25}]
     def sort_by_age(list1):
         return sorted(alist,key=lambda x:x['age'],reverse=True)
 ```
 ## 3.6 下面代码的输出结果将是什么？
-```
+```python
     list = ['a','b','c','d','e']
     print(list[10:])
 ```
 代码将输出[],不会产生IndexError错误，就像所期望的那样，尝试用超出成员的个数的index来获取某个列表的成员。例如，尝试获取list[10]和之后的成员，会导致IndexError。然而，尝试获取列表的切片，开始的index超过了成员个数不会产生IndexError，而是仅仅返回一个空列表。这成为特别让人恶心的疑难杂症，因为运行的时候没有错误产生，导致Bug很难被追踪到。
 ## 3.7 写一个列表生成式，产生一个公差为11的等差数列
-```
+```python
     print([x*11 for x in range(10)])
 ```
 ## 3.8 给定两个列表，怎么找出他们相同的元素和不同的元素？
-```
+```python
     list1 = [1,2,3]
     list2 = [3,4,5]
     set1 = set(list1)
@@ -396,26 +396,26 @@ https://stackoverflow.com/questions/30294146/python-fastest-way-to-process-large
     print(set1 ^ set2)
 ```
 ## 3.9 请写出一段python代码实现删除list里面的重复元素？
-```
+```python
     l1 = ['b','c','d','c','a','a']
     l2 = list(set(l1))
     print(l2)
 ```
 用list类的sort方法:
-```
+```python
     l1 = ['b','c','d','c','a','a']
     l2 = list(set(l1))
     l2.sort(key=l1.index)
     print(l2)
 ```
 也可以这样写:
-```
+```python
     l1 = ['b','c','d','c','a','a']
     l2 = sorted(set(l1),key=l1.index)
     print(l2)
 ```
 也可以用遍历：
-```
+```python
     l1 = ['b','c','d','c','a','a']
     l2 = []
     for i in l1:
@@ -424,7 +424,7 @@ https://stackoverflow.com/questions/30294146/python-fastest-way-to-process-large
     print(l2)
 ```
 ## 3.10 给定两个list A，B ,请用找出A，B中相同与不同的元素
-```
+```python
     A,B 中相同元素： print(set(A)&set(B))
     A,B 中不同元素:  print(set(A)^set(B))
 ```
@@ -442,7 +442,7 @@ c. 字典 dict 、 集合 set
 
 ## 4.3 python如何实现单例模式?请写出两种实现方式?
 第一种方法:使用装饰器
-```
+```python
     def singleton(cls):
         instances = {}
         def wrapper(*args, **kwargs):
@@ -459,7 +459,7 @@ c. 字典 dict 、 集合 set
 ```
 第二种方法：使用基类
 New 是真正创建实例对象的方法，所以重写基类的new 方法，以此保证创建对象的时候只生成一个实例
-```
+```python
     class Singleton(object):
         def __new__(cls,*args,**kwargs):
             if not hasattr(cls,'_instance'):
@@ -475,14 +475,14 @@ New 是真正创建实例对象的方法，所以重写基类的new 方法，以
     print foo1 is foo2 #True
 ```
 第三种方法：元类，元类是用于创建类对象的类，类对象创建实例对象时一定要调用call方法，因此在调用call时候保证始终只创建一个实例即可，type是python的元类
-```
+```python
     class Singleton(type):
         def __call__(cls,*args,**kwargs):
             if not hasattr(cls,'_instance'):
                 cls._instance = super(Singleton,cls).__call__(*args,**kwargs)
             return cls._instance
 ```
-```
+```python
     class Foo(object):
         __metaclass__ = Singleton
     
@@ -492,7 +492,7 @@ New 是真正创建实例对象的方法，所以重写基类的new 方法，以
 
 ```
 ## 4.4 反转一个整数，例如-123 --> -321 
-```
+```python
     class Solution(object):
         def reverse(self,x):
             if -10<x<10:
@@ -513,7 +513,7 @@ New 是真正创建实例对象的方法，所以重写基类的new 方法，以
 ```
 ## 4.5 设计实现遍历目录与子目录，抓取.pyc文件
 第一种方法：
-```
+```python
     import os
 
     def get_files(dir,suffix):
@@ -529,7 +529,7 @@ New 是真正创建实例对象的方法，所以重写基类的new 方法，以
     get_files("./",'.pyc')
 ```
 第二种方法：
-```
+```python
     import os
     
     def pick(obj):
@@ -552,7 +552,7 @@ New 是真正创建实例对象的方法，所以重写基类的new 方法，以
         scan_path(path)
 ```
 第三种方法
-```
+```python
 from glob import iglob
 
 
@@ -565,7 +565,7 @@ if __name__ == "__main__":
     func("K:\Python_script", postfix)
 ```
 ## 4.6 一行代码实现1-100之和
-```
+```python
     count = sum(range(0,101))
     print(count)
 ```
@@ -573,7 +573,7 @@ if __name__ == "__main__":
 # Python高级
 ## 3 函数
 ## 3.6 手写一个判断时间的装饰器
-```
+```python
 import datetime
 
 
@@ -605,7 +605,7 @@ if __name__ == "__main__":
     test("backbp")
 ```
 ## 3.7 使用Python内置的filter()方法来过滤？
-```
+```python
     [x for x in filter(lambda x: x % 2 == 0, range(10))] 
 ```
 ## 4设计模式
@@ -614,7 +614,7 @@ if __name__ == "__main__":
 常见的是工厂模式和单例模式
 
 ## 4.2 请手写一个单例
-```
+```python
     #python2
     class A(object):
         __instance = None
@@ -633,7 +633,7 @@ if __name__ == "__main__":
 ## 4.5 对装饰器的理解，并写出一个计时器记录方法执行性能的装饰器？
 装饰器本质上是一个python函数，它可以让其他函数在不需要做任何代码变动的前提下增加额外功能，装饰器的返回值也是一个函数对象。
 
-```
+```python
     import time
     from functools import wraps
 
@@ -670,14 +670,14 @@ if __name__ == "__main__":
     X= (i for i in range(10))
     X是 generator类型
 ## 4.10 请用一行代码 实现将1-N 的整数列表以3为单位分组
-```
+```python
     N =100
     print ([[x for x in range(1,100)] [i:i+3] for i in range(0,100,3)])
 ```
 ## 4.11 Python中yield的用法》
 yield就是保存当前程序执行状态。你用for循环的时候，每次取一个元素的时候就会计算一次。用yield的函数叫generator,和iterator一样，它的好处是不用一次计算所有元素，而是用一次算一次，可以节省很多空间，generator每次计算需要上一次计算结果，所以用yield,否则一return，上次计算结果就没了
 ## 4.20 用一行代码生成[1,4,9,16,25,36,49,64,81,100]
-```
+```python
     print([x*x for x in range(1, 11)])
 ```
 ## 7系统编程
@@ -687,7 +687,7 @@ yield就是保存当前程序执行状态。你用for循环的时候，每次取
 首先要导入multiprocessing中的Process：
 创建一个Process对象;
 创建Process对象时，可以传递参数;
-```
+```python
     p = Process(target=XXX,args=(tuple,),kwargs={key:value})
     target = XXX 指定的任务函数，不用加(),
     args=(tuple,)kwargs={key:value}给任务函数传递的参数
@@ -695,7 +695,7 @@ yield就是保存当前程序执行状态。你用for循环的时候，每次取
 使用start()启动进程
 结束进程
 给子进程指定函数传递参数Demo
-```
+```python
     import os
     from mulitprocessing import Process
     import time
@@ -729,7 +729,7 @@ Queue.put(item,[block[,timeout]]):将item消息写入队列，block默认值为T
 如果block值为False，消息队列如果没有空间可写入，则会立刻抛出"Queue.Full"异常;
 Queue.put_nowait(item):相当Queue.put(item,False)
 进程间通信Demo:
-```
+```python
     from multiprocessing import Process.Queue
     import os,time,random
     #写数据进程执行的代码：
@@ -764,7 +764,7 @@ Queue.put_nowait(item):相当Queue.put(item,False)
         print('所有数据都写入并且读完')
 ```
     进程池Pool
-```
+```python
         #coding:utf-8
         from multiprocessing import Pool
         import os,time,random
@@ -788,7 +788,7 @@ Queue.put_nowait(item):相当Queue.put(item,False)
 进程池中使用Queue
 如果要使用Pool创建进程，就需要使用multiprocessing.Manager()中的Queue(),而不是multiprocessing.Queue(),否则会得到如下的错误信息：
 RuntimeError： Queue objects should only be shared between processs through inheritance
-```
+```python
         from multiprocessing import Manager,Pool
         import os,time,random
         def reader(q):
@@ -826,7 +826,7 @@ RuntimeError： Queue objects should only be shared between processs through inh
 5、 不影响主线程逻辑
 
 ## 7.4 多线程共同操作同一个数据互斥锁同步？
-```
+```python
     import threading
     import time
     class MyThread(threading.Thread):
@@ -858,7 +858,7 @@ RuntimeError： Queue objects should only be shared between processs through inh
  一、 setDaemon(False)
 当一个进程启动之后，会默认产生一个主线程，因为线程是程序执行的最小单位，当设置多线程时，主线程会创建多个子线程，在Python中，默认情况下就是setDaemon(False),主线程执行完自己的任务以后，就退出了，此时子线程会继续执行自己的任务，直到自己的任务结束。
 例子
-```
+```python
     import threading 
     import time
     
@@ -880,7 +880,7 @@ RuntimeError： Queue objects should only be shared between processs through inh
 二、 setDaemon（True)
 当我们使用setDaemon(True)时，这是子线程为守护线程，主线程一旦执行结束，则全部子线程被强制终止
 例子
-```
+```python
     import threading
     import time
     def thread():
@@ -902,7 +902,7 @@ join 所完成的工作就是线程同步，即主线程任务结束以后，进
 当设置守护线程时，含义是主线程对于子线程等待timeout的时间将会杀死该子线程，最后退出程序，所以说，如果有10个子线程，全部的等待时间就是每个timeout的累加和，简单的来说，就是给每个子线程一个timeou的时间，让他去执行，时间一到，不管任务有没有完成，直接杀死。
 没有设置守护线程时，主线程将会等待timeout的累加和这样的一段时间，时间一到，主线程结束，但是并没有杀死子线程，子线程依然可以继续执行，直到子线程全部结束，程序退出。
 例子
-```
+```python
     import threading
     import time
 
@@ -990,17 +990,17 @@ asyncio这个库就是使用python的yield这个可以打断保存当前函数�
 不能在应用创建后撤销注册一个蓝图而不销毁整个应用对象。
 使用蓝图的三个步骤
 1.创建一个蓝图对象
-```
+```python
 blue = Blueprint("blue",__name__)
 ```
 2.在这个蓝图对象上进行操作，例如注册路由、指定静态文件夹、注册模板过滤器...
-```
+```python
 @blue.route('/')
 def blue_index():
     return "Welcome to my blueprint"
 ```
 3.在应用对象上注册这个蓝图对象
-```
+```python
 app.register_blueprint(blue,url_prefix="/blue")
 ```
 
@@ -1065,7 +1065,7 @@ Session 和Cookie的区别
 
 ## 2.6 用的restframework完成api发送时间时区
 当前的问题是用django的rest framework模块做一个get请求的发送时间以及时区信息的api
-```
+```python
 class getCurrenttime(APIView):
     def get(self,request):
         local_time = time.localtime()
@@ -1117,32 +1117,32 @@ qq登录，在我们的项目中分为了三个接口，
 ## 2.12 django中间件的使用？
 Django在中间件中预置了六个方法，这六个方法的区别在于不同的阶段执行，对输入或输出进行干预，方法如下：
 1.初始化：无需任何参数，服务器响应第一个请求的时候调用一次，用于确定是否启用当前中间件
-```
+```python
 def __init__():
     pass
 ```
 2.处理请求前：在每个请求上调用，返回None或HttpResponse对象。
-```
+```python
 def process_request(request):
     pass
 ```
 3.处理视图前:在每个请求上调用，返回None或HttpResponse对象。
-```
+```python
 def process_view(request,view_func,view_args,view_kwargs):
     pass
 ```
 4.处理模板响应前：在每个请求上调用，返回实现了render方法的响应对象。
-```
+```python
 def process_template_response(request,response):
     pass
 ```
 5.处理响应后：所有响应返回浏览器之前被调用，在每个请求上调用，返回HttpResponse对象。
-```
+```python
 def process_response(request,response):
     pass
 ```
 6.异常处理：当视图抛出异常时调用，在每个请求上调用，返回一个HttpResponse对象。
-```
+```python
 def process_exception(request,exception):
     pass
 ```
