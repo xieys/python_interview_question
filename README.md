@@ -119,15 +119,15 @@
         *   6.11、请写出匹配ip的Python正则表达式
         *   6.12、Python里match与search的区别？
     *   [7、系统编程](#7系统编程)
-        *   7.1、进程总结
-        *   7.2、谈谈你对多进程，多线程，以及协程的理解，项目是否用？
-        *   7.3、Python异步使用场景有那些？
-        *   7.4、多线程共同操作同一个数据互斥锁同步？
-        *   7.5、什么是多线程竞争？
-        *   7.6、请介绍一下Python的线程同步？
-        *   7.7、解释一下什么是锁，有哪几种锁?
-        *   7.8、什么是死锁呢？
-        *   7.9、多线程交互访问数据，如果访问到了就不访问了
+        *   7.1、 进程总结
+        *   7.2、 谈谈你对多进程，多线程，以及协程的理解，项目是否用？
+        *   7.3、 Python异步使用场景有那些？
+        *   7.4、 多线程共同操作同一个数据互斥锁同步？
+        *   7.5、 什么是多线程竞争？
+        *   7.6、 请介绍一下Python的线程同步？
+        *   7.7、 解释一下什么是锁，有哪几种锁?
+        *   7.8、 什么是死锁呢？
+        *   7.9、 多线程交互访问数据，如果访问到了就不访问了
         *   7.10、什么是线程安全，什么是互斥锁？
         *   7.11、说说下面几个概念：同步，异步，阻塞，非阻塞?
         *   7.12、什么是僵尸进程和孤儿进程？怎么避免僵尸进程?
@@ -135,6 +135,7 @@
         *   7.14、线程是并发还是并行，进程是并发还是并行？
         *   7.15、并行（parallel）和并发（concurrency）？
         *   7.16、IO密集型和CPU密集型区别？
+        *   7.17  python asyncio的原理？
     *   8、网络编程
         *   8.1、怎么实现强行关闭客户端和服务器之间的连接?
         *   8.2、简述TCP和UDP的区别以及优缺点?
@@ -153,71 +154,69 @@
         *   8.15、HTTP常见请求头？
         *   8.16、七层模型？
         *   8.17、url的形式？
-    *   三、Web
-        *   1、Flask
-            *   1.1、对Flask蓝图(Blueprint)的理解？
-            *   1.2、Flask和Django路由映射的区别？
-        *   Django
-            *   2.1、什么是wsgi,uwsgi,uWSGI？
-            *   2.3、CORS和CSRF的区别？
-            *   2.4、Session、Cookie、JWT的理解 
-            *   2.5、简述Django请求生命周期 
-            *   2.6、什么是wsgi,uwsgi,uWSGI？
-            *   2.7、Django 、Flask、Tornado的对比
-            *   2.8、用的restframework完成api发送时间时区
-            *   2.9、nginx,tomcat,apache 都是什么?
-            *   2.10、请给出你熟悉关系数据库范式有那些，有什么作用
-            *   2.11、简述QQ登陆过程
-            *   2.12、post和get 的区别？
-            *   2.13、项目中日志的作用
-            *   2.14、django中间件的使用？
-            *   2.15、谈一下你对uWSGI和 nginx的理解？
-            *   2.16、Python中三大框架各自的应用场景？
-            *   2.17、有过部署经验？用的什么技术？可以满足多少压力？
-            *   2.18、Django中哪里用到了线程?哪里用到了协程?哪里用到了进程？
-            *   2.19、有用过Django REST framework 吗？
-            *   2.20、对cookie与session的了解？他们能单独用吗？
-        *   爬虫
-            *   1.1、试列出至少三种目前流行的大型数据库
-            *   1.2、列举您使用过的Python网络爬虫所用到的网络数据包?
-            *   1.3、列举您使用过的Python网络爬虫所用到的解析数据包？
-            *   1.4、爬取数据后使用哪个数据库存储数据的，为什么？
-            *   1.5、你用过的爬虫框架或者模块有哪些？优缺点？
-            *   1.6、写爬虫是用多进程好？还是多线程好？
-            *   1.7、常见的反爬虫和应对方法？
-            *   1.8、解析网页的解析器使用最多的是哪几个?
-            *   1.9、需要登录的网页，如何解决同时限制ip，cookie,session
-            *   1.10、验证码的解决?
-            *   1.11、使用最多的数据库，对他们的理解？
-            *   1.12、编写过哪些爬虫中间件？
-            *   1.13、“极验”滑动验证码如何破解？
-            *   1.14、爬虫多久爬一次，爬下来的数据是怎么存储？
-            *   1.15、cookie过期的处理问题？
-            *   1.16、动态加载又对及时性要求很高怎么处理？
-            *   1.17、HTTPS有什么优点和缺点？
-            *   1.18、HTTPS是如何实现安全传输数据的？
-            *   1.19、TTL，MSL，RTT各是什么？
-            *   1.20、谈一谈你对Selenium和PhantomJS了解
-            *   1.21、平常怎么使用代理的 ？
-            *   1.22、存放在数据库(redis、mysql等)。
-            *   1.23、怎么监控爬虫的状态?
-            *   1.24、描述下scrapy框架运行的机制？
-            *   1.25、谈谈你对Scrapy的理解？
-            *   1.26、怎么样让 scrapy 框架发送一个 post 请求（具体写出来）
-            *   1.27、怎么监控爬虫的状态 ？
-            *   1.28、怎么判断网站是否更新？
-            *   1.29、图片、视频爬取怎么绕过防盗连接
-            *   1.30、你爬出来的数据量大概有多大？大概多长时间爬一次？
-            *   1.31、用什么数据库存爬下来的数据？部署是你做的吗？怎么部署？
-            *   1.32、增量爬取
-            *   1.33、爬取下来的数据如何去重，说一下scrapy的具体的算法依据。
-            *   1.34、Scrapy的优缺点?
-            *   1.35、怎么设置爬取深度？
-            *   1.36、scrapy和scrapy-redis有什么区别？为什么选择redis数据库？
-            *   1.37、分布式爬虫主要解决什么问题？
-            *   1.38、什么是分布式存储？
-            *   1.39、你所知道的分布式爬虫方案有哪些？
-            *   1.40、scrapy-redis，有做过其他的分布式爬虫吗？
+*   [三、Web](#三.Web)
+    *   [1、Flask](#1、Flask)
+        *   1.1、对Flask蓝图(Blueprint)的理解？
+        *   1.2、Flask和Django路由映射的区别？
+    *   Django
+        *   2.1、什么是wsgi,uwsgi,uWSGI？
+        *   2.2、CORS和CSRF的区别？
+        *   2.3、Session、Cookie、JWT的理解 
+        *   2.4、简述Django请求生命周期 
+        *   2.5、Django 、Flask、Tornado的对比
+        *   2.6、用的restframework完成api发送时间时区
+        *   2.7、nginx,tomcat,apache 都是什么?
+        *   2.8、请给出你熟悉关系数据库范式有那些，有什么作用
+        *   2.9、简述QQ登陆过程
+        *   2.10、post和get 的区别？
+        *   2.11、项目中日志的作用
+        *   2.12、django中间件的使用？
+        *   2.13、谈一下你对uWSGI和 nginx的理解？
+        *   2.14、Python中三大框架各自的应用场景？
+        *   2.15、Django中哪里用到了线程?哪里用到了协程?哪里用到了进程？
+        *   2.16、有用过Django REST framework 吗？
+        *   2.17、对cookie与session的了解？他们能单独用吗？
+    *   爬虫
+        *   1.1、试列出至少三种目前流行的大型数据库
+        *   1.2、列举您使用过的Python网络爬虫所用到的网络数据包?
+        *   1.3、列举您使用过的Python网络爬虫所用到的解析数据包？
+        *   1.4、爬取数据后使用哪个数据库存储数据的，为什么？
+        *   1.5、你用过的爬虫框架或者模块有哪些？优缺点？
+        *   1.6、写爬虫是用多进程好？还是多线程好？
+        *   1.7、常见的反爬虫和应对方法？
+        *   1.8、解析网页的解析器使用最多的是哪几个?
+        *   1.9、需要登录的网页，如何解决同时限制ip，cookie,session
+        *   1.10、验证码的解决?
+        *   1.11、使用最多的数据库，对他们的理解？
+        *   1.12、编写过哪些爬虫中间件？
+        *   1.13、“极验”滑动验证码如何破解？
+        *   1.14、爬虫多久爬一次，爬下来的数据是怎么存储？
+        *   1.15、cookie过期的处理问题？
+        *   1.16、动态加载又对及时性要求很高怎么处理？
+        *   1.17、HTTPS有什么优点和缺点？
+        *   1.18、HTTPS是如何实现安全传输数据的？
+        *   1.19、TTL，MSL，RTT各是什么？
+        *   1.20、谈一谈你对Selenium和PhantomJS了解
+        *   1.21、平常怎么使用代理的 ？
+        *   1.22、存放在数据库(redis、mysql等)。
+        *   1.23、怎么监控爬虫的状态?
+        *   1.24、描述下scrapy框架运行的机制？
+        *   1.25、谈谈你对Scrapy的理解？
+        *   1.26、怎么样让 scrapy 框架发送一个 post 请求（具体写出来）
+        *   1.27、怎么监控爬虫的状态 ？
+        *   1.28、怎么判断网站是否更新？
+        *   1.29、图片、视频爬取怎么绕过防盗连接
+        *   1.30、你爬出来的数据量大概有多大？大概多长时间爬一次？
+        *   1.31、用什么数据库存爬下来的数据？部署是你做的吗？怎么部署？
+        *   1.32、增量爬取
+        *   1.33、爬取下来的数据如何去重，说一下scrapy的具体的算法依据。
+        *   1.34、Scrapy的优缺点?
+        *   1.35、怎么设置爬取深度？
+        *   1.36、scrapy和scrapy-redis有什么区别？为什么选择redis数据库？
+        *   1.37、分布式爬虫主要解决什么问题？
+        *   1.38、什么是分布式存储？
+        *   1.39、你所知道的分布式爬虫方案有哪些？
+        *   1.40、scrapy-redis，有做过其他的分布式爬虫吗？
 *   五、数据库
     *   1、MySQL
         *   1.1、主键 超键 候选键 外键
@@ -276,31 +275,45 @@
 <!-- markdown-toc end -->
 
 # Python基础
-## 1.1 有一个jsonline格式的文件爱file.txt 大小约为10K
-```
+## 1.1 有一个jsonline格式的文件file.txt 大小约为10K
+```python
     def get_lines():
-        l = []
-        with open('file.txt','rb) as f:
-            for eachline in f:
-                l.append(eachline)
-            return l
+        with open('file.txt','rb') as f:
+            return f.readlines()
 
     if __name__ == '__main__':
         for e in get_lines():
             process(e) #处理每一行数据
 ```
 现在要处理一个大小为10G的文件，但是内存只有4G，如果在只修改get_lines 函数而其他代码保持不变的情况下，应该如何实现？需要考虑的问题都有那些？
-```
+```python
     def get_lines():
-        l = []
         with open('file.txt','rb') as f:
-            data = f.readlines(60000)
-        l.append(data)
-        yield l
+            for i in f:
+                yield i
+```
+Pandaaaa906提供的方法
+```python
+from mmap import mmap
+
+
+def get_lines(fp):
+    with open(fp,"r+") as f:
+        m = mmap(f.fileno(), 0)
+        tmp = 0
+        for i, char in enumerate(m):
+            if char==b"\n":
+                yield m[tmp:i+1].decode()
+                tmp = i+1
+
+if __name__=="__main__":
+    for i in get_lines("fp_some_huge_file"):
+        print(i)
 ```
 要考虑的问题有：内存只有4G无法一次性读入10G文件，需要分批读入分批读入数据要记录每次读入数据的位置。分批每次读取数据的大小，太小会在读取操作花费过多时间。
+https://stackoverflow.com/questions/30294146/python-fastest-way-to-process-large-file
 ## 1.2 补充缺失的代码
-```
+```python
     def print_directory_contents(sPath):
     """
     这个函数接收文件夹的名称作为输入参数
@@ -308,16 +321,16 @@
     以及其包含文件夹中文件的路径
     """
     import os
-    for sChild in os.listdir(sPath):
-        sChildPath = os.path.join(sPath,sChild)
-        if os.path.isdir(sChildPath):
-            print_directory_contents(sChildPath)
+    for s_child in os.listdir(s_path):
+        s_child_path = os.path.join(s_path, s_child)
+        if os.path.isdir(s_child_path):
+            print_directory_contents(s_child_path)
         else:
-            print(sChildPath)
+            print(s_child_path)
 ```
 # 模块与包
 ## 2.1 输入日期， 判断这一天是这一年的第几天？
-```
+```python
     import datetime
     def dayofyear():
         year = input("请输入年份: ")
@@ -328,7 +341,7 @@
         return (date1-date2).days+1
 ```
 ## 2.2 打乱一个排好序的list对象alist？
-```
+```python
     import random
     alist = [1,2,3,4,5]
     random.shuffle(alist)
@@ -336,45 +349,45 @@
 ```
 # 数据类型
 ## 3.1 现有字典 d= {'a':24,'g':52,'i':12,'k':33}请按value值进行排序?
-```
+```python
     sorted(d.items(),key=lambda x:x[1])
 ```
 ## 3.2 字典推导式
-```
+```python
  d = {key:value for (key,value) in iterable}
 ```
 ## 3.3 请反转字符串 "aStr"?
-```
+```python
     print("aStr"[::-1])
 ```
 ## 3.4 将字符串 "k:1 |k1:2|k2:3|k3:4"，处理成字典 {k:1,k1:2,...}
-```
+```python
     str1 = "k:1|k1:2|k2:3|k3:4"
     def str2dict(str1):
         dict1 = {}
         for iterms in str1.split('|'):
-            key,value = iterms.split(':'):
-                dict1[key] = value
+            key,value = iterms.split(':')
+            dict1[key] = value
         return dict1
 ```
-## 3.5 请按alist中元素的age由小到大排序
-```
+## 3.5 请按alist中元素的age由大到小排序
+```python
     alist = [{'name':'a','age':20},{'name':'b','age':30},{'name':'c','age':25}]
     def sort_by_age(list1):
         return sorted(alist,key=lambda x:x['age'],reverse=True)
 ```
 ## 3.6 下面代码的输出结果将是什么？
-```
+```python
     list = ['a','b','c','d','e']
     print(list[10:])
 ```
 代码将输出[],不会产生IndexError错误，就像所期望的那样，尝试用超出成员的个数的index来获取某个列表的成员。例如，尝试获取list[10]和之后的成员，会导致IndexError。然而，尝试获取列表的切片，开始的index超过了成员个数不会产生IndexError，而是仅仅返回一个空列表。这成为特别让人恶心的疑难杂症，因为运行的时候没有错误产生，导致Bug很难被追踪到。
 ## 3.7 写一个列表生成式，产生一个公差为11的等差数列
-```
+```python
     print([x*11 for x in range(10)])
 ```
 ## 3.8 给定两个列表，怎么找出他们相同的元素和不同的元素？
-```
+```python
     list1 = [1,2,3]
     list2 = [3,4,5]
     set1 = set(list1)
@@ -383,26 +396,26 @@
     print(set1 ^ set2)
 ```
 ## 3.9 请写出一段python代码实现删除list里面的重复元素？
-```
+```python
     l1 = ['b','c','d','c','a','a']
     l2 = list(set(l1))
     print(l2)
 ```
 用list类的sort方法:
-```
+```python
     l1 = ['b','c','d','c','a','a']
     l2 = list(set(l1))
     l2.sort(key=l1.index)
     print(l2)
 ```
 也可以这样写:
-```
+```python
     l1 = ['b','c','d','c','a','a']
     l2 = sorted(set(l1),key=l1.index)
     print(l2)
 ```
 也可以用遍历：
-```
+```python
     l1 = ['b','c','d','c','a','a']
     l2 = []
     for i in l1:
@@ -411,7 +424,7 @@
     print(l2)
 ```
 ## 3.10 给定两个list A，B ,请用找出A，B中相同与不同的元素
-```
+```python
     A,B 中相同元素： print(set(A)&set(B))
     A,B 中不同元素:  print(set(A)^set(B))
 ```
@@ -429,7 +442,7 @@ c. 字典 dict 、 集合 set
 
 ## 4.3 python如何实现单例模式?请写出两种实现方式?
 第一种方法:使用装饰器
-```
+```python
     def singleton(cls):
         instances = {}
         def wrapper(*args, **kwargs):
@@ -446,7 +459,7 @@ c. 字典 dict 、 集合 set
 ```
 第二种方法：使用基类
 New 是真正创建实例对象的方法，所以重写基类的new 方法，以此保证创建对象的时候只生成一个实例
-```
+```python
     class Singleton(object):
         def __new__(cls,*args,**kwargs):
             if not hasattr(cls,'_instance'):
@@ -462,14 +475,14 @@ New 是真正创建实例对象的方法，所以重写基类的new 方法，以
     print foo1 is foo2 #True
 ```
 第三种方法：元类，元类是用于创建类对象的类，类对象创建实例对象时一定要调用call方法，因此在调用call时候保证始终只创建一个实例即可，type是python的元类
-```
+```python
     class Singleton(type):
         def __call__(cls,*args,**kwargs):
             if not hasattr(cls,'_instance'):
                 cls._instance = super(Singleton,cls).__call__(*args,**kwargs)
             return cls._instance
 ```
-```
+```python
     class Foo(object):
         __metaclass__ = Singleton
     
@@ -479,7 +492,7 @@ New 是真正创建实例对象的方法，所以重写基类的new 方法，以
 
 ```
 ## 4.4 反转一个整数，例如-123 --> -321 
-```
+```python
     class Solution(object):
         def reverse(self,x):
             if -10<x<10:
@@ -500,10 +513,10 @@ New 是真正创建实例对象的方法，所以重写基类的new 方法，以
 ```
 ## 4.5 设计实现遍历目录与子目录，抓取.pyc文件
 第一种方法：
-```
+```python
     import os
 
-    def getFiles(dir,suffix):
+    def get_files(dir,suffix):
         res = []
         for root,dirs,files in os.walk(dir):
             for filename in files:
@@ -513,10 +526,10 @@ New 是真正创建实例对象的方法，所以重写基类的new 方法，以
 
         print(res)
     
-    getFiles("./",'.pyc')
+    get_files("./",'.pyc')
 ```
 第二种方法：
-```
+```python
     import os
     
     def pick(obj):
@@ -538,20 +551,70 @@ New 是真正创建实例对象的方法，所以重写基类的new 方法，以
         path = input('输入目录')
         scan_path(path)
 ```
-## 4.6 一行代码实现1-100之和
+第三种方法
+```python
+from glob import iglob
+
+
+def func(fp, postfix):
+    for i in iglob(f"{fp}/**/*{postfix}", recursive=True):
+        print(i)
+
+if __name__ == "__main__":
+    postfix = ".pyc"
+    func("K:\Python_script", postfix)
 ```
+## 4.6 一行代码实现1-100之和
+```python
     count = sum(range(0,101))
     print(count)
 ```
 
 # Python高级
+## 3 函数
+## 3.6 手写一个判断时间的装饰器
+```python
+import datetime
+
+
+class TimeException(Exception):
+    def __init__(self, exception_info):
+        super().__init__()
+        self.info = exception_info
+
+    def __str__(self):
+        return self.info
+
+
+def timecheck(func):
+    def wrapper(*args, **kwargs):
+        if datetime.datetime.now().year == 2019:
+            func(*args, **kwargs)
+        else:
+            raise TimeException("函数已过时")
+
+    return wrapper
+
+
+@timecheck
+def test(name):
+    print("Hello {}, 2019 Happy".format(name))
+
+
+if __name__ == "__main__":
+    test("backbp")
+```
+## 3.7 使用Python内置的filter()方法来过滤？
+```python
+    [x for x in filter(lambda x: x % 2 == 0, range(10))] 
+```
 ## 4设计模式
 ## 4.1 对设计模式的理解，简述你了解的设计模式？
 设计模式是经过总结，优化的，对我们经常会碰到的一些编程问题的可重用解决方案。一个设计模式并不像一个类或一个库那样能够直接作用于我们的代码，反之，设计模式更为高级，它是一种必须在特定情形下实现的一种方法模板。
 常见的是工厂模式和单例模式
 
 ## 4.2 请手写一个单例
-```
+```python
     #python2
     class A(object):
         __instance = None
@@ -570,15 +633,20 @@ New 是真正创建实例对象的方法，所以重写基类的new 方法，以
 ## 4.5 对装饰器的理解，并写出一个计时器记录方法执行性能的装饰器？
 装饰器本质上是一个python函数，它可以让其他函数在不需要做任何代码变动的前提下增加额外功能，装饰器的返回值也是一个函数对象。
 
-```
+```python
     import time
+    from functools import wraps
+
     def timeit(func):
-        def wrapper():
+        @wraps(func)
+        def wrapper(*args, **kwargs):
             start = time.clock()
-            func()
+            ret = func(*args, **kwargs)
             end = time.clock()
             print('used:',end-start)
-            return wrapper
+            return ret
+        
+        return wrapper
     @timeit
     def foo():
         print('in foo()'foo())
@@ -587,20 +655,31 @@ New 是真正创建实例对象的方法，所以重写基类的new 方法，以
 在函数内部再定义一个函数，并且这个函数用到了外边函数的变量，那么将这个函数以及用到的一些变量称之为闭包。
 
 ## 4.7 函数装饰器有什么作用？
-装饰器本质上是一个python函数，它可以在让其他函数在不需要做任何代码的变动的前提下增加额外的功能。装饰器的返回值也是一个函数的对象，它经常用于有切面需求的场景。比如：插入日志，性能测试，事务处理，缓存。权限的校验等场景，有了装饰器就可以抽离出大量的与函数功能本身无关的雷同代码并发并继续使用。
+装饰器本质上是一个python函数或类，它可以在让其他函数在不需要做任何代码的变动的前提下增加额外的功能。装饰器的返回值也是一个函数的对象，它经常用于有切面需求的场景。比如：插入日志，性能测试，事务处理，缓存。权限的校验等场景，有了装饰器就可以抽离出大量的与函数功能本身无关的雷同代码并发并继续使用。
+详细参考：https://manjusaka.itscoder.com/2018/02/23/something-about-decorator/
+
 ##  4.8 生成器，迭代器的区别？
-迭代器是一个更抽象的概念，任何对象，如果它的类有next方法和iter方法返回自己本身，对于string,list,dict,tuple等这类容器对象，使用for循环遍历是很方便的，在后台for语句对容器对象调用iter()函数，iter()是python的内置函数，iter()会返回一个定义了next()方法的迭代器对象，它在容器中逐个访问容器内元素，next()也是python的内置函数，在没有后续元素时，next()会抛出一个StopIteration异常。
-生成器（Generator）是创建迭代器的简单而强大的工具。它们写起来就像是正规的函数，只是在需要返回数据的时候使用yield语句。每次next()被调用时，生成器会返回它脱离的位置（它记忆语句最后一次执行的位置和所有的数据值）
+迭代器是遵循迭代协议的对象。用户可以使用 iter() 以从任何序列得到迭代器（如 list, tuple, dictionary, set 等）。另一个方法则是创建一个另一种形式的迭代器 —— generator 。要获取下一个元素，则使用成员函数 next()（Python 2）或函数 next() function （Python 3） 。当没有元素时，则引发 StopIteration 此例外。若要实现自己的迭代器，则只要实现 next()（Python 2）或 `__next__`()（ Python 3）
+
+生成器（Generator），只是在需要返回数据的时候使用yield语句。每次next()被调用时，生成器会返回它脱离的位置（它记忆语句最后一次执行的位置和所有的数据值）
+
+
 区别： 生成器能做到迭代器能做的所有事，而且因为自动创建iter()和next()方法，生成器显得特别简洁，而且生成器也是高效的，使用生成器表达式取代列表解析可以同时节省内存。除了创建和保存程序状态的自动方法，当发生器终结时，还会自动抛出StopIteration异常。
+官方介绍：https://docs.python.org/3/tutorial/classes.html#iterators
 ## 4.9 X是什么类型?
-    X= (fo ri in ramg(10))
+    X= (i for i in range(10))
     X是 generator类型
 ## 4.10 请用一行代码 实现将1-N 的整数列表以3为单位分组
-```
-    print ([[x for x in range(1,100)] [i:i+3] for i in range(0,len(list_a),3)])
+```python
+    N =100
+    print ([[x for x in range(1,100)] [i:i+3] for i in range(0,100,3)])
 ```
 ## 4.11 Python中yield的用法》
 yield就是保存当前程序执行状态。你用for循环的时候，每次取一个元素的时候就会计算一次。用yield的函数叫generator,和iterator一样，它的好处是不用一次计算所有元素，而是用一次算一次，可以节省很多空间，generator每次计算需要上一次计算结果，所以用yield,否则一return，上次计算结果就没了
+## 4.20 用一行代码生成[1,4,9,16,25,36,49,64,81,100]
+```python
+    print([x*x for x in range(1, 11)])
+```
 ## 7系统编程
 ## 7.1 进程总结
 进程：程序运行在操作系统上的一个实例，就称之为进程。进程需要相应的系统资源：内存、时间片、pid。
@@ -608,7 +687,7 @@ yield就是保存当前程序执行状态。你用for循环的时候，每次取
 首先要导入multiprocessing中的Process：
 创建一个Process对象;
 创建Process对象时，可以传递参数;
-```
+```python
     p = Process(target=XXX,args=(tuple,),kwargs={key:value})
     target = XXX 指定的任务函数，不用加(),
     args=(tuple,)kwargs={key:value}给任务函数传递的参数
@@ -616,7 +695,7 @@ yield就是保存当前程序执行状态。你用for循环的时候，每次取
 使用start()启动进程
 结束进程
 给子进程指定函数传递参数Demo
-```
+```python
     import os
     from mulitprocessing import Process
     import time
@@ -650,7 +729,7 @@ Queue.put(item,[block[,timeout]]):将item消息写入队列，block默认值为T
 如果block值为False，消息队列如果没有空间可写入，则会立刻抛出"Queue.Full"异常;
 Queue.put_nowait(item):相当Queue.put(item,False)
 进程间通信Demo:
-```
+```python
     from multiprocessing import Process.Queue
     import os,time,random
     #写数据进程执行的代码：
@@ -685,7 +764,7 @@ Queue.put_nowait(item):相当Queue.put(item,False)
         print('所有数据都写入并且读完')
 ```
     进程池Pool
-```
+```python
         #coding:utf-8
         from multiprocessing import Pool
         import os,time,random
@@ -709,7 +788,7 @@ Queue.put_nowait(item):相当Queue.put(item,False)
 进程池中使用Queue
 如果要使用Pool创建进程，就需要使用multiprocessing.Manager()中的Queue(),而不是multiprocessing.Queue(),否则会得到如下的错误信息：
 RuntimeError： Queue objects should only be shared between processs through inheritance
-```
+```python
         from multiprocessing import Manager,Pool
         import os,time,random
         def reader(q):
@@ -747,7 +826,7 @@ RuntimeError： Queue objects should only be shared between processs through inh
 5、 不影响主线程逻辑
 
 ## 7.4 多线程共同操作同一个数据互斥锁同步？
-```
+```python
     import threading
     import time
     class MyThread(threading.Thread):
@@ -779,7 +858,7 @@ RuntimeError： Queue objects should only be shared between processs through inh
  一、 setDaemon(False)
 当一个进程启动之后，会默认产生一个主线程，因为线程是程序执行的最小单位，当设置多线程时，主线程会创建多个子线程，在Python中，默认情况下就是setDaemon(False),主线程执行完自己的任务以后，就退出了，此时子线程会继续执行自己的任务，直到自己的任务结束。
 例子
-```
+```python
     import threading 
     import time
     
@@ -801,7 +880,7 @@ RuntimeError： Queue objects should only be shared between processs through inh
 二、 setDaemon（True)
 当我们使用setDaemon(True)时，这是子线程为守护线程，主线程一旦执行结束，则全部子线程被强制终止
 例子
-```
+```python
     import threading
     import time
     def thread():
@@ -823,7 +902,7 @@ join 所完成的工作就是线程同步，即主线程任务结束以后，进
 当设置守护线程时，含义是主线程对于子线程等待timeout的时间将会杀死该子线程，最后退出程序，所以说，如果有10个子线程，全部的等待时间就是每个timeout的累加和，简单的来说，就是给每个子线程一个timeou的时间，让他去执行，时间一到，不管任务有没有完成，直接杀死。
 没有设置守护线程时，主线程将会等待timeout的累加和这样的一段时间，时间一到，主线程结束，但是并没有杀死子线程，子线程依然可以继续执行，直到子线程全部结束，程序退出。
 例子
-```
+```python
     import threading
     import time
 
@@ -893,3 +972,206 @@ CPU运算量大的程序，使用并行会更好
 ## 7.16 IO密集型和CPU密集型区别？
 IO密集型： 系统运行，大部分的状况是CPU在等 I/O（硬盘/内存）的读/写
 CPU密集型： 大部分时间用来做计算，逻辑判断等CPU动作的程序称之CPU密集型。
+## 7.17 python asyncio的原理？
+asyncio这个库就是使用python的yield这个可以打断保存当前函数的上下文的机制， 封装好了selector 摆脱掉了复杂的回调关系
+
+# 三.Web
+## 1、Flask
+## 1.1 对Flask蓝图(Blueprint)的理解？
+蓝图的定义
+蓝图 /Blueprint 是Flask应用程序组件化的方法，可以在一个应用内或跨越多个项目共用蓝图。使用蓝图可以极大简化大型应用的开发难度，也为Flask扩展提供了一种在应用中注册服务的集中式机制。
+蓝图的应用场景：
+把一个应用分解为一个蓝图的集合。这对大型应用是理想的。一个项目可以实例化一个应用对象，初始化几个扩展，并注册一集合的蓝图。
+以URL前缀和/或子域名，在应用上注册一个蓝图。URL前缀/子域名中的参数即成为这个蓝图下的所有视图函数的共同的视图参数（默认情况下）
+在一个应用中用不同的URL规则多次注册一个蓝图。
+通过蓝图提供模板过滤器、静态文件、模板和其他功能。一个蓝图不一定要实现应用或视图函数。
+初始化一个Flask扩展时，在这些情况中注册一个蓝图。
+蓝图的缺点：
+不能在应用创建后撤销注册一个蓝图而不销毁整个应用对象。
+使用蓝图的三个步骤
+1.创建一个蓝图对象
+```python
+blue = Blueprint("blue",__name__)
+```
+2.在这个蓝图对象上进行操作，例如注册路由、指定静态文件夹、注册模板过滤器...
+```python
+@blue.route('/')
+def blue_index():
+    return "Welcome to my blueprint"
+```
+3.在应用对象上注册这个蓝图对象
+```python
+app.register_blueprint(blue,url_prefix="/blue")
+```
+
+## 1.2 Flask 和 Django 路由映射的区别？
+  在django中，路由是浏览器访问服务器时，先访问的项目中的url，再由项目中的url找到应用中url，这些url是放在一个列表里，遵从从前往后匹配的规则。在flask中，路由是通过装饰器给每个视图函数提供的，而且根据请求方式的不同可以一个url用于不同的作用。
+
+## 2、 Django
+## 2.1、什么是wsgi,uwsgi,uWSGI?
+WSGI:
+web服务器网关接口，是一套协议。用于接收用户请求并将请求进行初次封装，然后将请求交给web框架。
+实现wsgi协议的模块：wsgiref,本质上就是编写一socket服务端，用于接收用户请求（django)
+werkzeug,本质上就是编写一个socket服务端，用于接收用户请求(flask)
+uwsgi:
+与WSGI一样是一种通信协议，它是uWSGI服务器的独占协议，用于定义传输信息的类型。
+uWSGI:
+是一个web服务器，实现了WSGI的协议，uWSGI协议，http协议
+
+## 2.2、 Django、Flask、Tornado的对比？
+1、 Django走的大而全的方向，开发效率高。它的MTV框架，自带的ORM,admin后台管理,自带的sqlite数据库和开发测试用的服务器，给开发者提高了超高的开发效率。
+重量级web框架，功能齐全，提供一站式解决的思路，能让开发者不用在选择上花费大量时间。
+自带ORM和模板引擎，支持jinja等非官方模板引擎。
+自带ORM使Django和关系型数据库耦合度高，如果要使用非关系型数据库，需要使用第三方库
+自带数据库管理app
+成熟，稳定，开发效率高，相对于Flask，Django的整体封闭性比较好，适合做企业级网站的开发。python web框架的先驱，第三方库丰富
+2、 Flask 是轻量级的框架，自由，灵活，可扩展性强，核心基于Werkzeug WSGI工具 和jinja2 模板引擎
+适用于做小网站以及web服务的API,开发大型网站无压力，但架构需要自己设计
+与关系型数据库的结合不弱于Django，而与非关系型数据库的结合远远优于Django
+3、 Tornado走的是少而精的方向，性能优越，它最出名的异步非阻塞的设计方式
+Tornado的两大核心模块：
+iostraem:对非阻塞的socket进行简单的封装
+ioloop: 对I/O 多路复用的封装,它实现一个单例
+
+## 2.3 CORS 和 CSRF的区别？
+什么是CORS？
+CORS是一个W3C标准,全称是“跨域资源共享"(Cross-origin resoure sharing).
+它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而客服了AJAX只能同源使用的限制。
+什么是CSRF？
+CSRF主流防御方式是在后端生成表单的时候生成一串随机token,内置到表单里成为一个字段，同时，将此串token置入session中。每次表单提交到后端时都会检查这两个值是否一致，以此来判断此次表单提交是否是可信的，提交过一次之后，如果这个页面没有生成CSRF token,那么token将会被清空,如果有新的需求，那么token会被更新。
+攻击者可以伪造POST表单提交，但是他没有后端生成的内置于表单的token，session中没有token都无济于事。
+
+## 2.4 Session,Cookie,JWT的理解
+为什么要使用会话管理
+众所周知，HTTP协议是一个无状态的协议，也就是说每个请求都是一个独立的请求，请求与请求之间并无关系。但在实际的应用场景，这种方式并不能满足我们的需求。举个大家都喜欢用的例子，把商品加入购物车，单独考虑这个请求，服务端并不知道这个商品是谁的，应该加入谁的购物车？因此这个请求的上下文环境实际上应该包含用户的相关信息，在每次用户发出请求时把这一小部分额外信息，也做为请求的一部分，这样服务端就可以根据上下文中的信息，针对具体的用户进行操作。所以这几种技术的出现都是对HTTP协议的一个补充，使得我们可以用HTTP协议+状态管理构建一个的面向用户的WEB应用。
+Session 和Cookie的区别
+  这里我想先谈谈session与cookies,因为这两个技术是做为开发最为常见的。那么session与cookies的区别是什么？个人认为session与cookies最核心区别在于额外信息由谁来维护。利用cookies来实现会话管理时，用户的相关信息或者其他我们想要保持在每个请求中的信息，都是放在cookies中,而cookies是由客户端来保存，每当客户端发出新请求时，就会稍带上cookies,服务端会根据其中的信息进行操作。
+  当利用session来进行会话管理时，客户端实际上只存了一个由服务端发送的session_id,而由这个session_id,可以在服务端还原出所需要的所有状态信息，从这里可以看出这部分信息是由服务端来维护的。
+    除此以外，session与cookies都有一些自己的缺点：
+    cookies的安全性不好，攻击者可以通过获取本地cookies进行欺骗或者利用cookies进行CSRF攻击。使用cookies时,在多个域名下，会存在跨域问题。
+    session 在一定的时间里，需要存放在服务端，因此当拥有大量用户时，也会大幅度降低服务端的性能，当有多台机器时，如何共享session也会是一个问题.(redis集群)也就是说，用户第一个访问的时候是服务器A，而第二个请求被转发给了服务器B，那服务器B如何得知其状态。实际上，session与cookies是有联系的，比如我们可以把session_id存放在cookies中的。
+    JWT是如何工作的
+    首先用户发出登录请求，服务端根据用户的登录请求进行匹配，如果匹配成功，将相关的信息放入payload中，利用算法，加上服务端的密钥生成token，这里需要注意的是secret_key很重要，如果这个泄露的话，客户端就可以随机篡改发送的额外信息，它是信息完整性的保证。生成token后服务端将其返回给客户端，客户端可以在下次请求时，将token一起交给服务端，一般是说我们可以将其放在Authorization首部中，这样也就可以避免跨域问题。
+
+## 2.5 简述Django请求生命周期
+一般是用户通过浏览器向我们的服务器发起一个请求(request),这个请求会去访问视图函数，如果不涉及到数据调用，那么这个时候视图函数返回一个模板也就是一个网页给用户）
+视图函数调用模型毛模型去数据库查找数据，然后逐级返回，视图函数把返回的数据填充到模板中空格中，最后返回网页给用户。
+1.wsgi ,请求封装后交给web框架（Flask，Django)
+2.中间件，对请求进行校验或在请求对象中添加其他相关数据，例如：csrf,request.session
+3.路由匹配 根据浏览器发送的不同url去匹配不同的视图函数
+4.视图函数，在视图函数中进行业务逻辑的处理，可能涉及到：orm，templates 
+5.中间件，对响应的数据进行处理
+6.wsgi，将响应的内容发送给浏览器
+
+## 2.6 用的restframework完成api发送时间时区
+当前的问题是用django的rest framework模块做一个get请求的发送时间以及时区信息的api
+```python
+class getCurrenttime(APIView):
+    def get(self,request):
+        local_time = time.localtime()
+        time_zone =settings.TIME_ZONE
+        temp = {'localtime':local_time,'timezone':time_zone}
+        return Response(temp)
+```
+## 2.7 nginx,tomcat,apach到都是什么？
+Nginx（engine x)是一个高性能的HTTP和反向代理服务器，也是 一个IMAP/POP3/SMTP服务器，工作在OSI七层，负载的实现方式：轮询，IP_HASH,fair,session_sticky.
+Apache HTTP Server是一个模块化的服务器，源于NCSAhttpd服务器
+Tomcat 服务器是一个免费的开放源代码的Web应用服务器，属于轻量级应用服务器，是开发和调试JSP程序的首选。
+
+## 2.8 请给出你熟悉关系数据库范式有哪些，有什么作用？
+在进行数据库的设计时，所遵循的一些规范，只要按照设计规范进行设计，就能设计出没有数据冗余和数据维护异常的数据库结构。
+数据库的设计的规范有很多，通常来说我们在设是数据库时只要达到其中一些规范就可以了，这些规范又称之为数据库的三范式，一共有三条，也存在着其他范式，我们只要做到满足前三个范式的要求，就能设陈出符合我们的数据库了，我们也不能全部来按照范式的要求来做，还要考虑实际的业务使用情况，所以有时候也需要做一些违反范式的要求。
+1.数据库设计的第一范式(最基本)，基本上所有数据库的范式都是符合第一范式的，符合第一范式的表具有以下几个特点：
+数据库表中的所有字段都只具有单一属性，单一属性的列是由基本的数据类型（整型，浮点型，字符型等）所构成的设计出来的表都是简单的二比表
+2.数据库设计的第二范式(是在第一范式的基础上设计的)，要求一个表中只具有一个业务主键，也就是说符合第二范式的表中不能存在非主键列对只对部分主键的依赖关系
+3.数据库设计的第三范式，指每一个非主属性既不部分依赖与也不传递依赖于业务主键，也就是第二范式的基础上消除了非主属性对主键的传递依赖
+
+## 2.9 简述QQ登陆过程
+qq登录，在我们的项目中分为了三个接口，
+第一个接口是请求qq服务器返回一个qq登录的界面;
+第二个接口是通过扫码或账号登陆进行验证，qq服务器返回给浏览器一个code和state,利用这个code通过本地服务器去向qq服务器获取access_token覆返回给本地服务器，凭借access_token再向qq服务器获取用户的openid(openid用户的唯一标识)
+第三个接口是判断用户是否是第一次qq登录，如果不是的话直接登录返回的jwt-token给用户，对没有绑定过本网站的用户，对openid进行加密生成token进行绑定
+
+## 2.10 post 和 get的区别?
+1.GET是从服务器上获取数据，POST是向服务器传送数据
+2.在客户端，GET方式在通过URL提交数据，数据在URL中可以看到，POST方式，数据放置在HTML——HEADER内提交
+3.对于GET方式，服务器端用Request.QueryString获取变量的值，对于POST方式，服务器端用Request.Form获取提交的数据
+
+
+## 2.11 项目中日志的作用
+一、日志相关概念
+1.日志是一种可以追踪某些软件运行时所发生事件的方法
+2.软件开发人员可以向他们的代码中调用日志记录相关的方法来表明发生了某些事情
+3.一个事件可以用一个包含可选变量数据的消息来描述
+4.此外，事件也有重要性的概念，这个重要性也可以被成为严重性级别(level)
+二、日志的作用
+1.通过log的分析，可以方便用户了解系统或软件、应用的运行情况;
+2.如果你的应用log足够丰富，可以分析以往用户的操作行为、类型喜好，地域分布或其他更多信息;
+3.如果一个应用的log同时也分了多个级别，那么可以很轻易地分析得到该应用的健康状况，及时发现问题并快速定位、解决问题，补救损失。
+4.简单来讲就是我们通过记录和分析日志可以了解一个系统或软件程序运行情况是否正常，也可以在应用程序出现故障时快速定位问题。不仅在开发中，在运维中日志也很重要，日志的作用也可以简单。总结为以下几点：
+1.程序调试
+2.了解软件程序运行情况，是否正常
+3,软件程序运行故障分析与问题定位
+4,如果应用的日志信息足够详细和丰富，还可以用来做用户行为分析
+
+## 2.12 django中间件的使用？
+Django在中间件中预置了六个方法，这六个方法的区别在于不同的阶段执行，对输入或输出进行干预，方法如下：
+1.初始化：无需任何参数，服务器响应第一个请求的时候调用一次，用于确定是否启用当前中间件
+```python
+def __init__():
+    pass
+```
+2.处理请求前：在每个请求上调用，返回None或HttpResponse对象。
+```python
+def process_request(request):
+    pass
+```
+3.处理视图前:在每个请求上调用，返回None或HttpResponse对象。
+```python
+def process_view(request,view_func,view_args,view_kwargs):
+    pass
+```
+4.处理模板响应前：在每个请求上调用，返回实现了render方法的响应对象。
+```python
+def process_template_response(request,response):
+    pass
+```
+5.处理响应后：所有响应返回浏览器之前被调用，在每个请求上调用，返回HttpResponse对象。
+```python
+def process_response(request,response):
+    pass
+```
+6.异常处理：当视图抛出异常时调用，在每个请求上调用，返回一个HttpResponse对象。
+```python
+def process_exception(request,exception):
+    pass
+```
+## 2.13 谈一下你对uWSGI和nginx的理解？
+1.uWSGI是一个Web服务器，它实现了WSGI协议、uwsgi、http等协议。Nginx中HttpUwsgiModule的作用是与uWSGI服务器进行交换。WSGI是一种Web服务器网关接口。它是一个Web服务器（如nginx，uWSGI等服务器）与web应用（如用Flask框架写的程序）通信的一种规范。
+要注意WSGI/uwsgi/uWSGI这三个概念的区分。
+WSGI是一种通信协议。
+uwsgi是一种线路协议而不是通信协议，在此常用于在uWSGI服务器与其他网络服务器的数据通信。
+uWSGI是实现了uwsgi和WSGI两种协议的Web服务器。
+nginx 是一个开源的高性能的HTTP服务器和反向代理：
+1.作为web服务器，它处理静态文件和索引文件效果非常高
+2.它的设计非常注重效率，最大支持5万个并发连接，但只占用很少的内存空间
+3.稳定性高，配置简洁。
+4.强大的反向代理和负载均衡功能，平衡集群中各个服务器的负载压力应用
+
+## 2.14 Python中三大框架各自的应用场景？
+django:主要是用来搞快速开发的，他的亮点就是快速开发，节约成本，,如果要实现高并发的话，就要对django进行二次开发，比如把整个笨重的框架给拆掉自己写socket实现http的通信,底层用纯c,c++写提升效率，ORM框架给干掉，自己编写封装与数据库交互的框架,ORM虽然面向对象来操作数据库，但是它的效率很低，使用外键来联系表与表之间的查询;
+flask: 轻量级，主要是用来写接口的一个框架，实现前后端分离，提考开发效率，Flask本身相当于一个内核，其他几乎所有的功能都要用到扩展(邮件扩展Flask-Mail，用户认证Flask-Login),都需要用第三方的扩展来实现。比如可以用Flask-extension加入ORM、文件上传、身份验证等。Flask没有默认使用的数据库，你可以选择MySQL，也可以用NoSQL。
+其WSGI工具箱用Werkzeug(路由模块)，模板引擎则使用Jinja2,这两个也是Flask框架的核心。
+Tornado： Tornado是一种Web服务器软件的开源版本。Tornado和现在的主流Web服务器框架（包括大多数Python的框架）有着明显的区别：它是非阻塞式服务器，而且速度相当快。得利于其非阻塞的方式和对epoll的运用，Tornado每秒可以处理数以千计的连接因此Tornado是实时Web服务的一个理想框架
+## 2.17 Django中哪里用到了线程？哪里用到了协程？哪里用到了进程？
+1.Django中耗时的任务用一个进程或者线程来执行，比如发邮件，使用celery.
+2.部署django项目是时候，配置文件中设置了进程和协程的相关配置。
+
+## 2.18 有用过Django REST framework吗？
+Django REST framework是一个强大而灵活的Web API工具。使用RESTframework的理由有：
+Web browsable API对开发者有极大的好处
+包括OAuth1a和OAuth2的认证策略
+支持ORM和非ORM数据资源的序列化
+全程自定义开发--如果不想使用更加强大的功能，可仅仅使用常规的function-based views额外的文档和强大的社区支持
+## 2.19 对cookies与session的了解？他们能单独用吗？
+Session采用的是在服务器端保持状态的方案，而Cookie采用的是在客户端保持状态的方案。但是禁用Cookie就不能得到Session。因为Session是用Session ID来确定当前对话所对应的服务器Session，而Session ID是通过Cookie来传递的，禁用Cookie相当于SessionID,也就得不到Session。
