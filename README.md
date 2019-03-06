@@ -665,6 +665,7 @@ if __name__ == "__main__":
 
 
 区别： 生成器能做到迭代器能做的所有事，而且因为自动创建iter()和next()方法，生成器显得特别简洁，而且生成器也是高效的，使用生成器表达式取代列表解析可以同时节省内存。除了创建和保存程序状态的自动方法，当发生器终结时，还会自动抛出StopIteration异常。
+
 官方介绍：https://docs.python.org/3/tutorial/classes.html#iterators
 ## 4.9 X是什么类型?
     X= (i for i in range(10))
@@ -674,7 +675,7 @@ if __name__ == "__main__":
     N =100
     print ([[x for x in range(1,100)] [i:i+3] for i in range(0,100,3)])
 ```
-## 4.11 Python中yield的用法》
+## 4.11 Python中yield的用法?
 yield就是保存当前程序执行状态。你用for循环的时候，每次取一个元素的时候就会计算一次。用yield的函数叫generator,和iterator一样，它的好处是不用一次计算所有元素，而是用一次算一次，可以节省很多空间，generator每次计算需要上一次计算结果，所以用yield,否则一return，上次计算结果就没了
 ## 4.20 用一行代码生成[1,4,9,16,25,36,49,64,81,100]
 ```
