@@ -689,38 +689,40 @@ G: global 全局作用域
 B： build-in 内置作用
 
 python在函数里面的查找分为4种，称之为LEGB，也正是按照这是顺序来查找的
-### 28.字符串”123″转换成123，不使用内置api，例如int（）
-方法一： 利用str 函数
+### 28.字符串 `"123"` 转换成 `123`，不使用内置api，例如 `int()`
+方法一： 利用 `str` 函数
 ```python
 def atoi(s):
-    s = s[::-1]
     num = 0
-    for i,v in enumerate(s):
-        for j in range(0,10):
+    for v in s:
+        for j in range(10):
             if v == str(j):
-                num += j *(10**i)
-        return num
-```
-方法二： 利用ord函数
-```python
-def atoi(s):
-    s = s[::-1]
-    num = 0
-    for i, v in enumerate(s):
-        offset = ord(v) - ord('0')
-        num += offset *(10 **i)
+                num = num * 10 + j
     return num
 ```
-方法三: 利用eval函数
+方法二： 利用 `ord` 函数
 ```python
 def atoi(s):
-    s = s[::-1]
     num = 0
-    for i, v in enumerate(s):
-        t = '%s *1 ' %v
+    for v in s:
+        num = num * 10 + ord(v) - ord('0')
+    return num
+```
+方法三: 利用 `eval` 函数
+```python
+def atoi(s):
+    num = 0
+    for v in s:
+        t = "%s * 1" % v
         n = eval(t)
-        num += n *(10 ** i)
+        num = num * 10 + n
     return num
+```
+方法四: 结合方法二，使用 `reduce`，一行解决
+```python
+from functools import reduce
+def atoi(s):
+    return reduce(lambda num, v: num * 10 + ord(v) - ord('0'), s, 0)
 ```
 ### 29.Given an array of integers
 给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。示例:给定nums = [2,7,11,15],target=9 因为 nums[0]+nums[1] = 2+7 =9,所以返回[0,1]
